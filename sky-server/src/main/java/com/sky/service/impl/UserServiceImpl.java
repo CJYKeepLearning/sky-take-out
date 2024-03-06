@@ -47,9 +47,10 @@ public class UserServiceImpl implements UserService {
                     .createTime(LocalDateTime.now())
                     .build();
             userMapper.insert(user);
+            log.info("注册用户的id:{}",user.getId());
         }
         //返回这个用户对象
-        return null;
+        return user;
     }
 
     private String getOpenid(String code){

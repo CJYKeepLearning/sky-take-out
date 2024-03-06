@@ -16,7 +16,9 @@ import java.util.List;
 public interface DishMapper {
     @Select("select count(id) from dish where category_id = #{categoryId}")
     Integer countByCategoryId(Long id);
+
     void insert(Dish dish);
+
     Page<DishVO> pageQuery(DishPageQueryDTO dishPageQueryDTO);
     List<Integer> statusOk(List<Long> ids);
     /**
